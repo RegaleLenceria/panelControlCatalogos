@@ -6,8 +6,8 @@ import { Save, Plus, Trash2, MapPin, Phone, Clock, MessageCircle } from 'lucide-
 
 interface Advisor {
   name: string;
-  whatsapp: string;
-  defaultMessage: string;
+  phone: string;
+  message: string;
 }
 
 interface ContactForm {
@@ -154,7 +154,7 @@ export const ContactConfig: React.FC = () => {
             </h2>
             <button
               type="button"
-              onClick={() => append({ name: '', whatsapp: '', defaultMessage: '' })}
+              onClick={() => append({ name: '', phone: '', message: '' })}
               className="text-rose-600 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center"
             >
               <Plus size={16} className="mr-1" /> Añadir Asesora
@@ -178,7 +178,7 @@ export const ContactConfig: React.FC = () => {
                   <div className="flex-1 space-y-1">
                     <label className="block text-xs font-medium text-gray-500">WhatsApp (Código país + Número)</label>
                     <input
-                      {...register(`advisors.${index}.whatsapp` as const, { 
+                      {...register(`advisors.${index}.phone` as const, { 
                         required: true,
                         pattern: /^[0-9]+$/
                       })}
@@ -189,7 +189,7 @@ export const ContactConfig: React.FC = () => {
                   <div className="flex-[2] space-y-1">
                     <label className="block text-xs font-medium text-gray-500">Mensaje Predefinido</label>
                     <input
-                      {...register(`advisors.${index}.defaultMessage` as const)}
+                      {...register(`advisors.${index}.message` as const)}
                       className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500 outline-none"
                       placeholder="Hola Carla, me interesa comprar por mayor"
                     />

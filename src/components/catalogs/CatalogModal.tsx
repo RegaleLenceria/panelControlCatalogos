@@ -18,7 +18,7 @@ interface CatalogForm {
 }
 
 export const CatalogModal: React.FC<CatalogModalProps> = ({ isOpen, onClose, onSaved, catalog }) => {
-  const { register, handleSubmit, reset, setValue } = useForm<CatalogForm>();
+  const { register, handleSubmit, reset } = useForm<CatalogForm>();
   const [loading, setLoading] = useState(false);
   
   // States for files and urls
